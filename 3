@@ -1,0 +1,25 @@
+import React from 'react';
+
+export default function Bai3() { 
+
+    const user = {
+        name: "Nguyễn Văn A",
+        sex: "Nam",
+        date_of_birth: "06/03/2024",
+        email: "nva@gmail.com",
+        address: "Thanh Xuân, Hà Nội",
+    };
+
+    return (
+        <div>
+            <h1>Thông Tin Cá Nhân</h1>
+            <ul>
+                <li>Họ và Tên:<strong>{user.name}</strong></li>
+                <li>Giới tính:<strong>{user.sex}</strong></li>
+                <li>Ngày sinh:<strong>{user.date_of_birth}</strong> </li>
+                <li>Email: <strong>{user.email}</strong></li>
+                <li>Địa chỉ: <strong>{user.address}</strong></li>
+            </ul>
+        </div>
+    );
+}
