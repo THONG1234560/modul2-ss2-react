@@ -1,0 +1,38 @@
+import React, { useState } from "react";
+
+export default function Bai2() {
+    const [inputs, setInputs] = useState({ n: null, m: null });
+    const [results, setResults] = useState({ cong: null, tru: null, nhan: null, chia: null });
+
+    const handleCalculate = () => {
+        const n = parseFloat(prompt("Nhập số thứ 1"));
+        const m = parseFloat(prompt("Nhập số thứ 2"));
+
+        if (!isNaN(n) && !isNaN(m)) {
+            setInputs({ n, m });
+            setResults({
+                cong: n + m,
+                tru: n - m,
+                nhan: n * m,
+                chia: m !== 0 ? n / m : "Không thể chia cho 0"
+            });
+        } else {
+            alert("Vui lòng nhập số hợp lệ!");
+        }
+    };
+
+    return (
+        <div>
+            <h1>Danh sách kết quả</h1>
+            <button onClick={handleCalculate}>Tính toán</button>
+            {inputs.n !== null && inputs.m !== null && (
+                <ul>
+                    <li>{inputs.n} + {inputs.m} = {results.cong}</li>
+                    <li>{inputs.n} - {inputs.m} = {results.tru}</li>
+                    <li>{inputs.n} * {inputs.m} = {results.nhan}</li>
+                    <li>{inputs.n} / {inputs.m} = {results.chia}</li>
+                </ul>
+            )}
+        </div>
+    );
+}
